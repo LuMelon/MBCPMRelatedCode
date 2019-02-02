@@ -1,0 +1,65 @@
+//******************************************
+//              data setting
+//******************************************
+string Data.labelFile /data2/zyoohv/SCPM/WTrainY
+string Data.featureFile /data2/zyoohv/SCPM/WTrainX
+string TestLabelFile /data2/zyoohv/SCPM/WTestY
+string TestFeatureFile /data2/zyoohv/SCPM/WTestX
+//string Data.labelFile /data2/zyoohv/SCPM/WTrainY1
+//string Data.featureFile /data2/zyoohv/SCPM/WTrainX1
+//string TestLabelFile /data2/zyoohv/SCPM/WTestY1
+//string TestFeatureFile /data2/zyoohv/SCPM/WTestX1
+
+//int BatchSize 300000
+int BatchSize 10000
+double Belta1 0.9
+double Gamma  0.9
+double Momentum 0.9
+double Regularizer 0.1
+double LearningRate 0.001
+int iterTol 5000
+
+//***********************************
+//     Model Setting
+//***********************************
+double BMRM.lambda 0.5
+double BMRM.epsilonTol 0.01
+double BMRM.gammaTol 0.01
+double BMRM.relEpsilonTol 0.01
+double BMRM.relGammaTol 0.01
+//string Model.initialization RANDOM_UNIFORM
+string Model.modelFile model10
+string BMRM.InfoFile  Info 
+//***********************************
+//    Loss Setting
+//***********************************
+//string Loss.lossFunctionType CWTAMulticlassLoss 
+string Loss.lossFunctionType HINGE 
+
+//***********************************
+//   Sover Setting
+//***********************************
+string Solver.type BMRM
+string BMRM.innerSolverType L2N2_DaiFletcherPGM
+//************************************
+//    Petuum Setting
+//************************************
+//int num_comm_channels_per_client 1
+//int num_clients 3
+//int num_worker_threads 2 
+//int client_id 0
+//
+//int staleness 3 
+//int clock_table_staleness 3 
+//int grad_table_staleness 3 
+//int model_table_staleness 300
+//
+int trainning_iter 100
+//int model_row 1
+//int model_col 100
+//int oplog_type 0
+// 
+//string hostfile /data2/zyoohv/SCPM/bosen/machinefiles/localserver
+//string consistency_model SSP
+//string process_storage_type BoundedSparse
+//string stats_path /data2/zyoohv/SCPM/bosen/
